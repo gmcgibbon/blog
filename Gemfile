@@ -16,5 +16,10 @@ gem 'middleman-blog'
 gem 'slim'
 gem 'redcarpet'
 
-# For feed.xml.builder
-gem "builder", "~> 3.0"
+# For feeds
+gem 'builder',  '~> 3.0'
+gem 'jbuilder', '~> 2.0'
+
+# For extra blog features
+gem 'tilt-jbuilder'
+gem 'nokogiri'
