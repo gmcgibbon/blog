@@ -102,7 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.0)
-  middleman (~> 4.1)
+  middleman (= 4.2.1)
   middleman-blog
   redcarpet (~> 3.3, >= 3.3.3)
   tzinfo-data
