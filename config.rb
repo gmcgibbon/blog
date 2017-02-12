@@ -26,9 +26,9 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = 'articles/{year}-{month}-{day}-{title}.html'
   # Matcher for blog source files
-  blog.sources = 'articles/{year}-{month}-{day}-{title}.html'
+  blog.sources = 'articles/{year}-{month}-{day}-{title}'
   # blog.taglink = "tags/{tag}.html"
   blog.layout = 'layouts/application'
   # blog.summary_separator = /(READMORE)/
@@ -66,4 +66,11 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+end
+
+# HACK: Remove generated article HTML
+after_build do
+  print 'Cleaning up articles...'
+  `rm -rf ./build/articles`
+  puts ' Done!'
 end
