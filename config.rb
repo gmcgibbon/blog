@@ -2,6 +2,8 @@
 # Page options, layouts, aliases and proxies
 ###
 
+set :layout, 'layouts/application'
+
 # Per-page layout changes:
 #
 # With no layout
@@ -26,7 +28,7 @@ activate :blog do |blog|
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = 'articles/{year}-{month}-{day}-{title}.html'
   # blog.taglink = "tags/{tag}.html"
   # blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
@@ -36,8 +38,8 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  blog.tag_template      = 'tag.html'
-  blog.calendar_template = 'calendar.html'
+  # blog.tag_template      = 'tag.html'
+  # blog.calendar_template = 'calendar.html'
 
   # Enable pagination
   # blog.paginate = true
