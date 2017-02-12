@@ -67,3 +67,10 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+# HACK: Remove generated article HTML
+after_build do
+  print 'Cleaning up articles...'
+  `rm -rf ./build/articles`
+  puts ' Done!'
+end
