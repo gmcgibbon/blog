@@ -48,9 +48,14 @@ activate :blog do |blog|
 end
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  # activate :livereload
+  activate :external_pipeline,
+    name:    :webpack,
+    command: 'npm run webpack',
+    source:  '.webpack-cache',
+    latency: 1
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
