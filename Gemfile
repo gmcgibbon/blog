@@ -22,4 +22,5 @@ gem 'jbuilder', '~> 2.0'
 
 # For extra blog features
 gem 'tilt-jbuilder'
+gem 'typescript-node'
 gem 'nokogiri'
