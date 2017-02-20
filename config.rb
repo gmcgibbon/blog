@@ -87,3 +87,11 @@ after_build do
   `rm -rf ./build/articles`
   puts ' Done!'
 end
+
+ENV.tap do |env|
+  env['NODE_ENV'] = if build?
+    'build'
+  else
+    'development'
+  end
+end
