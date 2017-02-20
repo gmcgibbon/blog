@@ -18,6 +18,8 @@ page '/*.txt',  layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
+ignore '*.ts'
+
 ###
 # Helpers
 ###
@@ -48,9 +50,14 @@ activate :blog do |blog|
 end
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload, host: 'localhost'
+  activate :external_pipeline,
+    name:    :webpack,
+    command: 'npm run webpack -- --watch',
+    source:  '.webpack-cache',
+    latency: 1
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -66,6 +73,12 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+
+  activate :external_pipeline,
+    name:    :webpack,
+    command: 'npm run webpack -- --bail',
+    source:  '.webpack-cache',
+    latency: 1
 end
 
 # HACK: Remove generated article HTML
