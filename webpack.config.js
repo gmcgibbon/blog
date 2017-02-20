@@ -5,7 +5,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.json'],
     modules:    ['node_modules', 'bower_components']
   },
   output: {
@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
         {
-          test:    /source\/javascripts\/.*\.ts?$/,
+          test:    /source\/javascripts\/.*\.tsx?$/,
           exclude: /node_modules|bower_components|\.webpack-cache/,
           loader:  'ts-loader'
         }

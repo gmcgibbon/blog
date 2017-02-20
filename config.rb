@@ -18,6 +18,8 @@ page '/*.txt',  layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
+ignore '*.ts'
+
 ###
 # Helpers
 ###
@@ -52,7 +54,7 @@ configure :development do
   activate :livereload, host: 'localhost'
   activate :external_pipeline,
     name:    :webpack,
-    command: 'npm run webpack',
+    command: 'npm run webpack -- --watch',
     source:  '.webpack-cache',
     latency: 1
 end
@@ -71,6 +73,12 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+
+  activate :external_pipeline,
+    name:    :webpack,
+    command: 'npm run webpack -- --bail',
+    source:  '.webpack-cache',
+    latency: 1
 end
 
 # HACK: Remove generated article HTML
