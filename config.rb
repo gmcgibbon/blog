@@ -49,7 +49,7 @@ end
 
 # Reload the browser automatically whenever files change
 configure :development do
-  # activate :livereload
+  activate :livereload, host: 'localhost'
   activate :external_pipeline,
     name:    :webpack,
     command: 'npm run webpack',
