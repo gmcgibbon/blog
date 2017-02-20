@@ -3,15 +3,35 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": false,
+    "sourceMap": true,
+    "noEmit": true,
+    "strictNullChecks": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "hammerjs",
+      "node",
+      "source-map",
+      "webpack"
+    ]
   },
-  "compileOnSave": false,
   "exclude": [
-    "node_modules", "bower_components"
-  ]
+    "node_modules",
+    "!node_modules/@types",
+    "bower_components"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "compileOnSave": false
 }
