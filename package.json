@@ -4,7 +4,7 @@
   "description": "Gannon's Blog",
   "main": "index.js",
   "scripts": {
-    "test":    "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack"
   },
   "author": "Gannon McGibbon",
@@ -29,6 +29,7 @@
     "@types/source-map": "^0.5.0",
     "@types/webpack": "^2.2.1",
     "awesome-typescript-loader": "^3.0.4",
+    "dotenv-webpack": "^1.4.1",
     "typescript": "^2.1.6",
     "webpack": "^2.2.1"
   }

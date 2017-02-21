@@ -1,4 +1,5 @@
 const Webpack = require('webpack');
+const Dotenv  = require('dotenv-webpack');
 var   helpers = require('./config/helpers');
 
 module.exports = {
@@ -30,6 +31,7 @@ module.exports = {
     new Webpack.EnvironmentPlugin([
       'NODE_ENV'
     ]),
+    new Dotenv(),
     new Webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
