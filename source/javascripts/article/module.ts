@@ -1,9 +1,21 @@
-import { NgModule }       from '@angular/core';
-import { HttpModule }     from '@angular/http';
-import { ArticleService } from './service';
+import { NgModule }             from '@angular/core';
+import { HttpModule }           from '@angular/http';
+import { RouterModule }         from '@angular/router';
+import { ArticleService }       from './service';
+import { ArticleListComponent } from './list/component';
 
 @NgModule({
-  imports:   [HttpModule],
-  providers: [ArticleService],
+  imports: [
+    HttpModule
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    ArticleService
+  ],
+  declarations: [
+    ArticleListComponent
+  ]
 })
 export class ArticleModule { }
