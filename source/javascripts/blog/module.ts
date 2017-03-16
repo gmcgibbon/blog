@@ -1,8 +1,9 @@
-import { NgModule }      from '@angular/core';
-import { HttpModule }    from '@angular/http';
-import { ArticleModule } from '../article/module';
-import { BlogComponent } from './component';
-import { BlogService }   from './service';
+import { NgModule }        from '@angular/core';
+import { HttpModule }      from '@angular/http';
+import { ArticleModule }   from '../article/module';
+import { BlogComponent }   from './component';
+import { BlogService }     from './service';
+import { BlogGetResolver } from './get_resolver';
 
 @NgModule({
   imports:   [
@@ -10,7 +11,8 @@ import { BlogService }   from './service';
     ArticleModule
   ],
   providers: [
-    BlogService
+    BlogService,
+    BlogGetResolver
   ],
   declarations: [
     BlogComponent
