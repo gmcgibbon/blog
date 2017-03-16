@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute }    from '@angular/router';
+import { Blog }              from '../models/blog';
 
 @Component({
   selector:    'blog',
@@ -6,4 +8,14 @@ import { Component } from '@angular/core';
   styleUrls:  ['./blog/component.css']
 })
 
-export class BlogComponent { }
+export class BlogComponent implements OnInit {
+
+  blog : Blog;
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.blog = this.route.snapshot.data.blog;
+  }
+
+}
