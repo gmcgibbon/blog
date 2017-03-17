@@ -1,1 +1,5 @@
-h3 Article List
+div{ *ngFor='let article of articles' }
+  .article
+    h3{} {{ article.title }}
+    span{} {{ article.updated_at | date :'medium' }}
+    p{ [innerHTML]='article.summary' }
