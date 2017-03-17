@@ -14,7 +14,7 @@ gem 'middleman', '4.2.1'
 gem 'middleman-blog'
 gem 'middleman-livereload'
 
-gem 'slim'
+gem 'slim', github: 'slim-template/slim'
 gem 'redcarpet'
 
 # For feeds
