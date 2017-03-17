@@ -10,7 +10,7 @@ export class ArticleService {
 
   private url = `/api/articles.json`;
 
-  query(): Observable<Article> {
+  query(): Observable<Article[]> {
     return this.http
       .get(this.url)
       .map(this.map)
