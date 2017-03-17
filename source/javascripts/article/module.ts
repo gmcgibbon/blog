@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { HttpModule }           from '@angular/http';
 import { RouterModule }         from '@angular/router';
 import { ArticleService }       from './service';
+import { ArticleQueryResolver } from './query_resolver';
 import { ArticleListComponent } from './list/component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ArticleListComponent } from './list/component';
     RouterModule
   ],
   providers: [
-    ArticleService
+    ArticleService,
+    ArticleQueryResolver
   ],
   declarations: [
     ArticleListComponent
