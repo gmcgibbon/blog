@@ -2,6 +2,7 @@ import { Routes }               from '@angular/router';
 import { BlogComponent }        from '../blog/component';
 import { BlogGetResolver }      from '../blog/get_resolver';
 import { ArticleListComponent } from '../article/list/component';
+import { ArticleQueryResolver } from '../article/query_resolver';
 
 export const ROUTES: Routes = [
   {
@@ -11,7 +12,13 @@ export const ROUTES: Routes = [
       blog: BlogGetResolver
     },
     children: [
-      { path: '', component: ArticleListComponent }
+      {
+        path: '',
+        component: ArticleListComponent,
+        resolve: {
+          articles: ArticleQueryResolver
+        }
+      }
     ]
   }
 ]
