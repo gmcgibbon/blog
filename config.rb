@@ -96,3 +96,9 @@ ENV.tap do |env|
     'development'
   end
 end
+
+Slim::Engine.options.tap do |options|
+  options[:splat_prefix]     = '**'
+  options[:code_attr_delims] = { '{' => '}' }
+  options[:attr_list_delims] = { '{' => '}' }
+end
