@@ -4,6 +4,7 @@ import { HttpModule }           from '@angular/http';
 import { RouterModule }         from '@angular/router';
 import { ArticleService }       from './service';
 import { ArticleQueryResolver } from './query_resolver';
+import { ArticleGetResolver }   from './get_resolver';
 import { ArticleListComponent } from './list/component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ArticleListComponent } from './list/component';
   ],
   providers: [
     ArticleService,
-    ArticleQueryResolver
+    ArticleQueryResolver,
+    ArticleGetResolver
   ],
   declarations: [
     ArticleListComponent
