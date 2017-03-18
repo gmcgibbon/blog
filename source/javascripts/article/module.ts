@@ -9,9 +9,7 @@ import { ArticleListComponent } from './list/component';
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule
-  ],
-  exports: [
+    HttpModule,
     RouterModule
   ],
   providers: [

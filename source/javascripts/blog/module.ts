@@ -1,6 +1,7 @@
 import { NgModule }        from '@angular/core';
 import { CommonModule }    from '@angular/common';
 import { HttpModule }      from '@angular/http';
+import { RouterModule }    from '@angular/router';
 import { ArticleModule }   from '../article/module';
 import { BlogComponent }   from './component';
 import { BlogService }     from './service';
@@ -10,7 +11,8 @@ import { BlogGetResolver } from './get_resolver';
   imports:   [
     CommonModule,
     HttpModule,
-    ArticleModule
+    ArticleModule,
+    RouterModule
   ],
   providers: [
     BlogService,
