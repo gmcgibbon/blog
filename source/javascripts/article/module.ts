@@ -1,11 +1,12 @@
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
-import { HttpModule }           from '@angular/http';
-import { RouterModule }         from '@angular/router';
-import { ArticleService }       from './service';
-import { ArticleQueryResolver } from './query_resolver';
-import { ArticleGetResolver }   from './get_resolver';
-import { ArticleListComponent } from './list/component';
+import { NgModule }               from '@angular/core';
+import { CommonModule }           from '@angular/common';
+import { HttpModule }             from '@angular/http';
+import { RouterModule }           from '@angular/router';
+import { ArticleService }         from './service';
+import { ArticleQueryResolver }   from './query_resolver';
+import { ArticleGetResolver }     from './get_resolver';
+import { ArticleListComponent }   from './list/component';
+import { ArticleDetailComponent } from './detail/component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ArticleListComponent } from './list/component';
     ArticleGetResolver
   ],
   declarations: [
-    ArticleListComponent
+    ArticleListComponent,
+    ArticleDetailComponent
   ]
 })
 export class ArticleModule { }
