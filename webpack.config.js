@@ -1,5 +1,6 @@
 const Webpack = require('webpack');
 const Dotenv  = require('dotenv-webpack');
+const Extract = require('extract-text-webpack-plugin');
 var   helpers = require('./config/helpers');
 
 module.exports = {
@@ -24,6 +25,10 @@ module.exports = {
           test:    /source\/javascripts\/.*\.tsx?$/,
           exclude: /node_modules|bower_components|\.webpack-cache/,
           loader:  'awesome-typescript-loader'
+        },
+        {
+          test: /source\/stylesheets\/.*\.scss?$/,
+          use:  Extract.extract(['css-loader', 'sass-loader'])
         }
     ]
   },
@@ -37,6 +42,7 @@ module.exports = {
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       helpers.root('./source/javascripts'), // location of your src
       {} // a map of your routes
-    )
+    ),
+    new Extract('./stylesheets/application.css')
   ]
 }
