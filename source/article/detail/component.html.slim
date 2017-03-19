@@ -1,1 +1,7 @@
-h3 Article Detail
+#article
+  h3.title{}    {{ article.title }}
+  span.author{} {{ article.author }}
+  span.date{}   {{ article.updated_at | date :'medium' }}
+  .body{ [innerHTML]='article.body' }
+ul#tags
+  li.tag{ *ngFor='let tag of article.tags' } {{ tag }}

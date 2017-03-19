@@ -1,1 +1,18 @@
+#article {
 
+  padding: 5px;
+  margin:  0px 20px 30px;
+  border: 3px solid #000;
+}
+
+#tags {
+  list-style: none;
+  margin: 10px 20px;
+  padding: 0px;
+  .tag {
+    display: inline-block;
+    padding: 3px;
+    margin: 1.5px;
+    border: 3px solid #000;
+  }
+}
