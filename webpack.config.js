@@ -8,7 +8,9 @@ module.exports = {
     application: [
       './source/javascripts/polyfill.ts',
       './source/javascripts/vendor.ts',
-      './source/javascripts/main.ts'
+      './source/javascripts/main.ts',
+      './source/stylesheets/vendor.scss',
+      './source/stylesheets/main.scss'
     ]
   },
   resolve: {
