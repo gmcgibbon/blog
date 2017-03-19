@@ -20,6 +20,7 @@
     "@angular/platform-server": "2.4.8",
     "@angular/router": "3.4.8",
     "core-js": "2.4.1",
+    "normalize.css": "^5.0.0",
     "rxjs": "^5.2.0",
     "zone.js": "0.7.6"
   },
