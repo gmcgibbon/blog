@@ -9,7 +9,9 @@ import { BlogModule }           from '../blog/module';
   imports: [
     BrowserModule,
     BlogModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(
+      ROUTES, { useHash: process.env['HASH_ROUTING'] }
+    )
   ],
   declarations: [
     ApplicationComponent
