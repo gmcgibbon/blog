@@ -8,7 +8,7 @@ html
     base href='/'
     = javascript_include_tag :application
     = stylesheet_link_tag    :application
-    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: 'Atom Feed'
+    = blog_feed_tag          :atom
   body
-    div id='main' role='main'
+    #wrapper role='main'
       = yield

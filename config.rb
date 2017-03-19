@@ -62,11 +62,11 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def blog_feed_tag(type)
+    feed_tag type, "#{blog.options.prefix.to_s}/feed.xml", title: 'Atom Feed'
+  end
+end
 
 # Build-specific configuration
 configure :build do
