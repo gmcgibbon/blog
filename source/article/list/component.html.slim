@@ -1,5 +1,5 @@
-div{ *ngFor='let article of articles' }
-  .article{ [routerLink]="['', article.id]" }
+#articles
+  .article{ *ngFor='let article of articles' [routerLink]="['', article.id]" }
     h3{} {{ article.title }}
     span{} {{ article.updated_at | date :'medium' }}
     p{ [innerHTML]='article.summary' }
