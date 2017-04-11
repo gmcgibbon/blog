@@ -64,7 +64,11 @@ end
 # Methods defined in the helpers block are available in templates
 helpers do
   def blog_feed_tag(type)
-    feed_tag type, "#{blog.options.prefix.to_s}/feed.xml", title: 'Atom Feed'
+    feed_tag type, blog_feed_path, title: 'Atom Feed'
+  end
+
+  def blog_feed_path
+    "#{blog.options.prefix.to_s}/feed.xml"
   end
 end
 
