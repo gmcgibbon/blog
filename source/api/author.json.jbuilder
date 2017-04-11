@@ -1,6 +1,7 @@
-json.name     'Gannon McGibbon'
-json.summary  'Summary'
+json.name    author_name
+json.summary author_summary
 json.social do
-  json.github   'https://github.com'
-  json.linkedin 'https://www.linkedin.com'
+  social_env.each do |key, value|
+    json.set! key, value
+  end
 end

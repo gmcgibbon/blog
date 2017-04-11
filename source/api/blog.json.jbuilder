@@ -1,3 +1,3 @@
-json.title    'Gannon\'s Blog'
-json.subtitle 'Hack The Planet!'
+json.title    blog_title
+json.subtitle blog_subtitle
 json.rss      blog_feed_path
