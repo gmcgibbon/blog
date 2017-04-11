@@ -4,7 +4,6 @@ json.array! blog.articles do |article|
   json.tags article.tags
   json.published_at article.date.to_time
   json.updated_at File.mtime(article.source_file).to_time
-  json.author 'Gannon McGibbon'
   json.summary article.summary
   json.body article.body
 end
