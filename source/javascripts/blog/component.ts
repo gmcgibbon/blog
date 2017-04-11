@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute }    from '@angular/router';
+import { Author }            from '../models/author';
 import { Blog }              from '../models/blog';
 
 @Component({
@@ -10,12 +11,14 @@ import { Blog }              from '../models/blog';
 
 export class BlogComponent implements OnInit {
 
-  blog : Blog;
+  author : Author;
+  blog   : Blog;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.blog = this.route.snapshot.data.blog;
+    this.author = this.route.snapshot.data.author;
+    this.blog   = this.route.snapshot.data.blog;
   }
 
 }
