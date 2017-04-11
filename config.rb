@@ -70,6 +70,33 @@ helpers do
   def blog_feed_path
     "#{blog.options.prefix.to_s}/feed.xml"
   end
+
+  cattr_accessor :env_default do
+    {
+      'BLOG_TITLE'     => 'Blog',
+      'BLOG_SUBTITLE'  => '-',
+      'AUTHOR_NAME'    => 'Author',
+      'AUTHOR_SUMMARY' => '-',
+      'SOCIAL_URL'     => '#'
+    }
+  end
+
+  %i(author_name author_summary blog_title blog_subtitle).each do |key|
+    define_method key do
+      env_fetch key.to_s.underscore.upcase
+    end
+  end
+
+  def social_env
+    ENV.keys.select { |key| key.start_with? 'SOCIAL_' }.map do |key, value|
+      json_key = key.split('_').drop(1).join('_').underscore.to_sym
+      [json_key, value || env_fetch('SOCIAL_URL')]
+    end.to_h
+  end
+
+  def env_fetch(key)
+    ENV.fetch key, env_default[key]
+  end
 end
 
 # Build-specific configuration
