@@ -1,3 +1,7 @@
+import { Social } from './social';
+
 export class Author {
-  name: string;
+  name:    string;
+  summary: string;
+  social:  Social;
 }
